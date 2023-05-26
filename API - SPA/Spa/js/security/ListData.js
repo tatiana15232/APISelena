@@ -9,7 +9,7 @@ function loadModulo(){
         var registros = `<option selected="" selected disabled hidden>--- Seleccione ---</option>`;
         items.forEach(function(item, index, array){
             registros += `
-                <option value="`+item.id+`">`+item.code+` - `+item.description+`</option>
+                <option value="`+item.id+`">`+item.code+` - `+item.label+`</option>
             `;
         })
         $("#moduleId").html(registros);
@@ -45,7 +45,7 @@ function loadViews(){
         var registros = `<option selected="" selected disabled hidden>--- Seleccione ---</option>`;
         items.forEach(function(item, index, array){
             registros += `
-                <option value="`+item.id+`">`+item.label+`</option>
+                <option value="`+item.id+`">`+item.code+` - `+item.label+`</option>
             `;
         })
         $("#viewId").html(registros);
@@ -63,7 +63,7 @@ function loadPerson(){
         var registros = `<option selected="" selected disabled hidden>--- Seleccione ---</option>`;
         items.forEach(function(item, index, array){
             registros += `
-                <option value="`+item.id+`">`+item.document+` - `+item.firstName+`</option>
+                <option value="`+item.id+`">`+item.document+` - `+item.firstName+`  `+item.firstLastName+`</option>
             `;
         })
         $("#personId").html(registros);

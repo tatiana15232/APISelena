@@ -14,7 +14,7 @@
     <!-- Agregar jquery -->
     <script src="../../asset/library/node_modules/jquery/dist/jquery.js"></script>
 
-    <script src='../../js/security/Persons.js'></script>
+    <script src='../../js/security/Person.js'></script>
 </head>
 
 <body style="background: #EEEEEE;">
@@ -61,8 +61,8 @@
                     <select class="form-select" id="gender" name="gender">
                         <!-- data result database -->
                         <option selected="" selected disabled hidden value="">--Seleccione--</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Masculino">Masculino</option>
+                        <option value="0">Masculino</option>
+                        <option value="1">Femenino</option>
                     </select>
 
                     <label for="" class="form-label mt-2">Correo</label>
@@ -75,7 +75,7 @@
                     <input type="text" class="form-control" name="address" id="address" aria-describedby="" placeholder="Direccion">
 
                     <label for="" class="form-label mt-2">Estado</label>
-                    <select class="form-select" id="status" name="status">
+                    <select class="form-select" id="state" name="state">
                         <!-- data result database -->
                         <option selected="" selected disabled hidden value="">--Seleccione--</option>
                         <option value="1">Activo</option>

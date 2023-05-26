@@ -2,7 +2,7 @@
 // Busqueda por id
 function findById(id) {
     $.ajax({
-        url: 'http://localhost:9000/security/api/security/viewsRoles/' + id,
+        url: 'http://localhost:9000/backend-service/api/security/viewRole/' + id,
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -11,13 +11,13 @@ function findById(id) {
         $("#id").val(item.id)
         $("#roleId").val(item.roleId.id)
         $("#viewId").val(item.viewId.id)
-        $("#status").val(item.status==true?'1':'0')      
+        $("#state").val(item.state==true?'1':'0')      
     })
 }
 
 function loadTable() {
     $.ajax({
-        url: 'http://localhost:9000/security/api/security/viewsRoles',
+        url: 'http://localhost:9000/backend-service/api/security/viewRole',
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -29,8 +29,8 @@ function loadTable() {
 
                         <tr class="table-light">
                             <td>`+item.roleId.description+`</td>
-                            <td>`+item.viewId.label+`</td>
-                            <td>`+(item.status==true?'Activo':'Inactivo')+`</td>
+                            <td>`+item.viewId.code+` - `+item.viewId.label+`</td>
+                            <td>`+(item.state==true?'Activo':'Inactivo')+`</td>
                             <td><img src="../../asset/library/node_modules/bootstrap-icons/icons/pencil-square.svg" alt="" onclick="findById(`+item.id+`);"></td>
                             <td><img src="../../asset/library/node_modules/bootstrap-icons/icons/person-x.svg" alt="" onclick="deleteById(`+item.id+`);"></td>
                         </tr>
@@ -43,7 +43,7 @@ function loadTable() {
 //Accion para eliminar un registro seleccionado 
 function deleteById(id){
     $.ajax({
-        url: 'http://localhost:9000/security/api/security/viewsRoles/' + id,
+        url: 'http://localhost:9000/backend-service/api/security/viewRole/' + id,
         method: "delete",
         headers: {
             "Content-Type": "application/json"
@@ -57,7 +57,7 @@ function deleteById(id){
 //Accion de adicionar un registro
 function Add(){
     $.ajax({
-        url: 'http://localhost:9000/security/api/security/viewsRoles',
+        url: 'http://localhost:9000/backend-service/api/security/viewRole',
         data: JSON.stringify({
             roleId: {
                 id:$("#roleId").val()
@@ -65,7 +65,7 @@ function Add(){
             viewId: {
                 id:$("#viewId").val()
             },  
-            status: parseInt($("#status").val()),
+            state: parseInt($("#state").val()),
             userCreationId: 1,
             dateCreation: new Date()
         }),
@@ -86,7 +86,7 @@ function Add(){
 //Accion de actualizar un registro
 function Update(){
     $.ajax({
-        url: 'http://localhost:9000/security/api/security/viewsRoles/' + $("#id").val(),
+        url: 'http://localhost:9000/backend-service/api/security/viewRole/' + $("#id").val(),
         data: JSON.stringify({
             roleId: {
                 id:$("#roleId").val()
@@ -94,7 +94,7 @@ function Update(){
             viewId: {
                 id:$("#viewId").val()
             },  
-            status: parseInt($("#status").val()),
+            state: parseInt($("#state").val()),
             userCreationId: 1,
             dateCreation: new Date(),
             userModificationId: 1,
@@ -118,5 +118,5 @@ function clearData(){
     $("#id").val(""),
     $("#roleId").val(""),
     $("#viewId").val(""),
-    $("#status").val("")
+    $("#state").val("")
 }

@@ -3,7 +3,7 @@ function Login() {
     let password = document.getElementById('Password').value;
 
     //Datos de ingreso de la aplicación User: 1234 Pass: 1234
-    if (user == '1234' && password == '1234') {
+    if (user == '12345' && password == '12345') {
         Swal.fire({
             icon: 'success',
             title: 'Bienvenido',
