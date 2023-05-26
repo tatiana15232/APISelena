@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="backed-service/src/main/java"/>
+	<classpathentry kind="src" path="backed-service/src/test/java"/>
+	<classpathentry kind="lib" path="backed-service/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="backed-service/bin/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="backed-service/target/backed-service-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="backed-service/target/classes"/>
+</classpath>
